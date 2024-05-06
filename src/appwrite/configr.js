@@ -117,7 +117,7 @@ export class Service {
     }
   }
   // Get file preview
-  getFilrPreview(fileId) {
+  getFilePreview(fileId) {
     return this.bucket.getFilePreview(config.appWriteBucketId, fileId);
   }
 }
