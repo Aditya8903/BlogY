@@ -11,6 +11,7 @@ import PostForm from "./post-form/PostForm";
 import AuthLayout from "./AuthLayout";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import Select from "./Select"; 
 export {
   Header,
   Footer,
@@ -24,5 +25,6 @@ export {
   PostForm,
   AuthLayout,
   Button,
+  Select,
   Input,
 };

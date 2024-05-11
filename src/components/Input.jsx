@@ -1,10 +1,6 @@
-/* eslint-disable react/prop-types */
-import { React, useId } from "react";
+import React, { forwardRef } from "react";
 
-const Input = React.forwardRef(function Input(
-  { label, type = "text", className = "", ...props },
-  ref
-) {
+const Input = forwardRef(({ label, type = "text", className = "", ...props }, ref) => {
   const id = useId();
   return (
     <div className="w-full">
