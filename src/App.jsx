@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { login, logout } from "./store/authSlice";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-// import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./App.css";
 const App = () => {
   // console.log(import.meta.env.VITE_APPRWRITE_URL);
@@ -33,8 +33,7 @@ const App = () => {
       <div className="w-full block">
         <Header />
         <main>
-          {/* <Outlet /> */}
-          outlet
+          <Outlet />
         </main>
         <Footer />
       </div>
