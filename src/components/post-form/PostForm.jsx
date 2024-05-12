@@ -1,4 +1,4 @@
-import { React, useCallback } from "react";
+import React,{ useCallback } from "react";
 import { useForm } from "react-hook-form";
 import service from "../../appwrite/configr";
 import { useNavigate } from "react-router-dom";
@@ -37,10 +37,9 @@ export default function PostForm({ post }) {
     } else {
       const file = await service.uploadFile(data.image[0]);
       if (file) {
-        const dbpostData = await service.createPost({
-          ...data,
-          userId: userData.$id,
-        });
+        const fileId = file.$id;
+        data.featuredImage = fileId;
+        const dbpostData = await appwriteService.createPost({ ...data, userId: userData.$id });
         if (dbpostData) {
           navigate(`/post/${dbpostData.$id}`);
         }
@@ -83,7 +82,7 @@ export default function PostForm({ post }) {
           {...register("slug", { required: true })}
           onInput={(e) => {
             setValue("slug", slugTransform(e.currentTarget.value), {
-              shouldValidate: true,
+              shouldValidate: true
             });
           }}
         />
